@@ -1,0 +1,124 @@
+/* Highlight Plan B column */
+.highlight-col {
+    background-color: #f4ecff;
+    border-left: 2px solid #b388f0;
+    border-right: 2px solid #b388f0;
+  }
+  
+  /* Plan B CTA button inside table header */
+  .highlight-col .btn {
+    background-color: #7a43ea;
+    color: white;
+    border: none;
+  }
+  
+  /* Plan card button border radius and padding (optional UI polish) */
+  th .btn,
+  td .btn {
+    border-radius: 999px;
+    padding: 0.4rem 1.2rem;
+  }
+  
+  /* Chevron rotation for accordion */
+  .rotate-icon {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+  }
+  .category-icon {
+    display: inline-block;
+  }
+  
+  /* Optional: subtle hover effect on feature rows */
+  tr:hover td {
+    background-color: #f9f9f9;
+  }
+  .hero-section {
+    background: linear-gradient(to bottom, #9647FF 0%, #f9f4ff 100%);
+    color: white;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.125rem;
+    color: #f1e9ff;
+  }
+  
+  .hero-section .badge-pill {
+    font-size: 0.95rem;
+    background-color: #ffffff33;
+    border-radius: 999px;
+  }
+  .employee-filter {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: none; /* REMOVE bottom border */
+    background-color: #f8f9fa;
+  }
+  
+  #employeeCount {
+    min-width: 150px;
+  }
+  
+  /* Remove spacing between sections */
+  .employee-filter + .pricing-table-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+/* Scrollable table container */
+.pricing-table-container {
+    max-height: 75vh;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Sticky header styling */
+  .sticky-header th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+  .pricing-table-container table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  .pricing-table-container thead th {
+    padding-top: 0.5rem; /* Reduce top padding */
+    padding-bottom: 0.5rem; /* Optional: tighter rows */
+    vertical-align: middle; /* Center text vertically */
+  }
+  
+  .pricing-table-container tbody td {
+    padding-top: 0.5rem; /* Consistent smaller padding */
+    padding-bottom: 0.5rem;
+  }
+  .highlight-col {
+    background-color: #f4ecff;
+    border-left: 2px solid #b388f0;
+    border-right: 2px solid #b388f0;
+  }
+  .pricing .price-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .pricing .price-unit {
+    font-size: 0.875rem;
+    color: #6c757d; /* Bootstrap's muted gray */
+    font-weight: normal;
+    margin-top: 2px;
+  }
+  <style>
+  #pdf-temp-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #pdf-temp-wrapper th, #pdf-temp-wrapper td {
+    border: 1px solid #ccc;
+    padding: 6px;
+  }
+</style>
+  
+      

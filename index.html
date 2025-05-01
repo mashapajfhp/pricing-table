@@ -50,10 +50,10 @@ th .btn {
 <body>
 
 <!-- HERO SECTION -->
-<section class="hero-section text-center py-5">
+<section class="hero-section text-center">
   <div class="container text-white">
     <h1 class="display-4 fw-bold">Choose the Perfect Plan for Your Needs</h1>
-    <p class="lead text-light-subtle mb-4">
+    <p class="mb-3">
       Transparent pricing with no hidden fees. All plans include core features with premium options for growing businesses.
     </p>
     <div class="d-inline-block badge-pill px-4 py-2 fw-semibold text-dark bg-white bg-opacity-25 rounded-pill" style="background-color: rgba(255,255,255,0.2); color: #fff; font-weight: 500;">
@@ -62,36 +62,33 @@ th .btn {
   </div>
 </section>
 
-<!-- Employee Count Selector -->
+<!-- Employee Count Selector and Download Button -->
 <section class="employee-filter py-2 bg-light mb-0">
-  <div class="container d-flex justify-content-end align-items-center">
-    <div class="d-flex align-items-center gap-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-3">
       <label for="employeeCount" class="form-label fw-bold mb-0">Employee Count:</label>
       <select id="employeeCount" class="form-select w-auto">
-        <option selected>1 - 10</option>
-  <option>11 - 25</option>
-  <option>26 - 50</option>
-  <option>51 - 100</option>
-  <option>101 - 150</option>
-  <option>151 - 200</option>
-  <option>201 - 300</option>
-  <option>301 - 500</option>
-  <option>501+</option>
+        <option>1 - 10</option>
+        <option>11 - 25</option>
+        <option>26 - 50</option>
+        <option>51 - 100</option>
+        <option>101 - 150</option>
+        <option>151 - 200</option>
+        <option>201 - 300</option>
+        <option>301 - 500</option>
+        <option>501+</option>
       </select>
     </div>
+    <button class="btn btn-secondary ms-3" onclick="downloadPDF()">Download Pricing as PDF</button>
   </div>
-  <div class="container text-end my-3">
-    <button class="btn btn-secondary" onclick="downloadPDF()">Download Pricing as PDF</button>
-  </div>
-  
 </section>
-<div class="container my-3" id="pdf-summary">
+<div class="container my-3 d-none" id="pdf-summary">
   <h5 class="fw-semibold">Pricing for Employee Count: <span id="selectedEmployeeCount">1 - 10</span></h5>
 </div>
 
 
 <!-- PRICING TABLE -->
-<section class="container-fluid my-5 px-0">
+<section class="container-fluid mt-0 mb-2 px-0">
   <div class="table-responsive pricing-table-container">
     <table class="table feature-table text-center">
       <thead class="align-top sticky-header">
@@ -504,53 +501,55 @@ document.querySelectorAll('.category-row').forEach(row => {
     document.getElementById("employeeCount").dispatchEvent(new Event("change"));
   });
   </script>
-   
-  <script>
-    function downloadPDF() {
-      const element = document.querySelector('.pricing-table-container'); // or any selector
-      const opt = {
-        margin:       0.5,
-        filename:     'pricing-table.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    }
-    </script>
-    
+       
 
-  <script>
-function downloadPDF() {
-  // Expand all collapsed sections temporarily
-  const collapsibles = document.querySelectorAll('.collapse');
-  collapsibles.forEach(el => el.classList.add('show'));
-
-  // Create a temporary wrapper for PDF content
-  const element = document.createElement('div');
-
-  // Clone summary and table
-  const summary = document.getElementById('pdf-summary').cloneNode(true);
-  const table = document.querySelector('.pricing-table-container').cloneNode(true);
-
-  element.appendChild(summary);
-  element.appendChild(table);
-
-  // Options for PDF
-  const opt = {
-    margin:       0.5,
-    filename:     'pricing-table.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2, scrollY: 0 },
-    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-  };
-
-  // Generate PDF and then collapse everything again
-  html2pdf().set(opt).from(element).save().then(() => {
-    collapsibles.forEach(el => el.classList.remove('show'));
-  });
-}
-</script>
+       <script>
+        function downloadPDF() {
+          // Step 1: Expand all collapsed rows
+          const collapsibles = document.querySelectorAll('.collapse');
+          collapsibles.forEach(el => el.classList.add('show'));
+        
+          // Step 2: Wait briefly to allow DOM update
+          setTimeout(() => {
+            // Step 3: Create a wrapper
+            const wrapper = document.createElement('div');
+            wrapper.id = 'pdf-wrapper';
+            wrapper.style.padding = '20px';
+            wrapper.style.background = '#fff';
+            wrapper.style.width = '1500px'; // Force wide width
+            wrapper.style.overflow = 'visible';
+        
+            // Step 4: Clone content
+            const summary = document.getElementById('pdf-summary').cloneNode(true);
+            const table = document.querySelector('.pricing-table-container > table').cloneNode(true);
+            table.style.width = '100%'; // Ensure full width inside wrapper
+        
+            wrapper.appendChild(summary);
+            wrapper.appendChild(table);
+            document.body.appendChild(wrapper);
+        
+            // Step 5: PDF options
+            const opt = {
+              margin: 0.5,
+              filename: 'pricing-table.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: {
+                scale: 2,
+                scrollY: 0,
+                windowWidth: 1600 // Ensures full table is rendered
+              },
+              jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+            };
+        
+            // Step 6: Generate and clean up
+            html2pdf().set(opt).from(wrapper).save().then(() => {
+              document.getElementById('pdf-wrapper')?.remove();
+              collapsibles.forEach(el => el.classList.remove('show'));
+            });
+          }, 300); // Delay to let all elements render
+        }
+        </script>
+        
 <script>
   window.addEventListener("DOMContentLoaded", function () {
     // Trigger pricing based on default employee count

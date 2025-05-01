@@ -82,9 +82,10 @@ th .btn {
     <button class="btn btn-secondary ms-3" onclick="downloadPDF()">Download Pricing as PDF</button>
   </div>
 </section>
-<div class="container my-3 d-none" id="pdf-summary">
+<div class="container my-3 d-none print-only" id="pdf-summary">
   <h5 class="fw-semibold">Pricing for Employee Count: <span id="selectedEmployeeCount">1 - 10</span></h5>
 </div>
+
 
 
 <!-- PRICING TABLE -->
@@ -145,7 +146,7 @@ th .btn {
 
         <!-- Records Management -->
         <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".recordsManagement" aria-expanded = "true" >
-          <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> RECORDS MANAGEMENT</td>
+          <td colspan="5" class="text-start fw-bold ps-3"> RECORDS MANAGEMENT</td>
         </tr>
         <tr class="collapse show recordsManagement">
           <td class="text-start ps-5">Digital Business Cards</td>
@@ -193,13 +194,13 @@ th .btn {
 
         <!-- Employee Self Service -->
         <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".essFeatures">
-          <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> EMPLOYEE SELF SERVICE</td>
+          <td colspan="5" class="text-start fw-bold ps-3"> EMPLOYEE SELF SERVICE</td>
         </tr>
         <tr class="collapse essFeatures"><td class="text-start ps-5">Employee Self Service Portal</td><td>✓</td><td>✓</td><td class="highlight-col">✓</td><td>✓</td></tr>
 
 <!-- Time Off -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".timeOffFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> LEAVE MANAGEMENT</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> LEAVE MANAGEMENT</td>
 </tr>
 <tr class="collapse timeOffFeatures">
   <td class="text-start ps-5">Basic Leaves Management</td>
@@ -218,7 +219,7 @@ th .btn {
 
 <!-- Attendance -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".attendanceFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> ATTENDANCE</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> ATTENDANCE</td>
 </tr>
 <tr class="collapse attendanceFeatures">
   <td class="text-start ps-5">Basic Attendance</td>
@@ -244,7 +245,7 @@ th .btn {
 
 <!-- Shift Scheduling -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".shiftFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> SHIFT SCHEDULING</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> SHIFT SCHEDULING</td>
 </tr>
 <tr class="collapse shiftFeatures">
   <td class="text-start ps-5">Basic Shift Scheduling</td>
@@ -263,7 +264,7 @@ th .btn {
 
 <!-- PAYROLL -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".payrollFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> PAYROLL</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> PAYROLL</td>
 </tr>
 <tr class="collapse payrollFeatures">
   <td class="text-start ps-5">Payroll Management</td>
@@ -310,7 +311,7 @@ th .btn {
 
 <!-- Knowledge Hub -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".knowledgeFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> KNOWLEDGE HUB</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> KNOWLEDGE HUB</td>
 </tr>
 <tr class="collapse knowledgeFeatures">
   <td class="text-start ps-5">Knowledge Hub</td>
@@ -322,7 +323,7 @@ th .btn {
 
 <!-- Timesheets -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".timesheetsFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> TIMESHEETS</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> TIMESHEETS</td>
 </tr>
 <tr class="collapse timesheetsFeatures">
   <td class="text-start ps-5">Timesheets</td>
@@ -334,7 +335,7 @@ th .btn {
 
 <!-- Employee Performance -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".performanceFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> EMPLOYEE PERFORMANCE</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> EMPLOYEE PERFORMANCE</td>
 </tr>
 <tr class="collapse performanceFeatures">
   <td class="text-start ps-5">Performance Management</td>
@@ -346,7 +347,7 @@ th .btn {
 
 <!-- Employee Engagement -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".engagementFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> EMPLOYEE ENGAGEMENT</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> EMPLOYEE ENGAGEMENT</td>
 </tr>
 <tr class="collapse engagementFeatures">
   <td class="text-start ps-5">News Feed, Announcements</td>
@@ -358,7 +359,7 @@ th .btn {
 
 <!-- Employee Benefits -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".benefitsFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> EMPLOYEE BENEFITS</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> EMPLOYEE BENEFITS</td>
 </tr>
 <tr class="collapse benefitsFeatures">
   <td class="text-start ps-5">Health Services</td>
@@ -384,7 +385,7 @@ th .btn {
 
 <!-- Task Management -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".taskFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> TASK MANAGEMENT</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> TASK MANAGEMENT</td>
 </tr>
 <tr class="collapse taskFeatures">
   <td class="text-start ps-5">Task Management</td>
@@ -396,7 +397,7 @@ th .btn {
 
 <!-- Employee Ticketing -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".ticketingFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> EMPLOYEE TICKETS</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> EMPLOYEE TICKETS</td>
 </tr>
 <tr class="collapse ticketingFeatures">
   <td class="text-start ps-5">Employee Ticketing System</td>
@@ -408,7 +409,7 @@ th .btn {
 
 <!-- Workflows -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".workflowFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> WORKFLOWS</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> WORKFLOWS</td>
 </tr>
 <tr class="collapse workflowFeatures">
   <td class="text-start ps-5">Custom Communication Workflows</td>
@@ -427,7 +428,7 @@ th .btn {
 
 <!-- Reporting & Insights -->
 <tr class="bg-light category-row" data-bs-toggle="collapse" data-bs-target=".reportFeatures">
-  <td colspan="5" class="text-start fw-bold ps-3"><span class="category-icon">&#9654;</span> REPORTS & INSIGHTS</td>
+  <td colspan="5" class="text-start fw-bold ps-3"> REPORTS & INSIGHTS</td>
 </tr>
 <tr class="collapse reportFeatures">
   <td class="text-start ps-5">Pre-Built Reports</td>
@@ -505,30 +506,28 @@ document.querySelectorAll('.category-row').forEach(row => {
 
        <script>
         function downloadPDF() {
-          // Step 1: Expand all collapsed rows
+          // Expand all collapsed sections temporarily
           const collapsibles = document.querySelectorAll('.collapse');
           collapsibles.forEach(el => el.classList.add('show'));
         
-          // Step 2: Wait briefly to allow DOM update
           setTimeout(() => {
-            // Step 3: Create a wrapper
-            const wrapper = document.createElement('div');
-            wrapper.id = 'pdf-wrapper';
-            wrapper.style.padding = '20px';
-            wrapper.style.background = '#fff';
-            wrapper.style.width = '1500px'; // Force wide width
-            wrapper.style.overflow = 'visible';
+            // Create a wrapper and apply .pdf-mode class
+            const element = document.createElement('div');
+            element.setAttribute('id', 'pdf-wrapper');
+            element.classList.add('pdf-mode');
+            element.style.padding = '20px';
+            element.style.background = '#fff';
+            element.style.width = '100%';
+            element.style.overflow = 'visible';
         
-            // Step 4: Clone content
+            // Clone summary and table content
             const summary = document.getElementById('pdf-summary').cloneNode(true);
-            const table = document.querySelector('.pricing-table-container > table').cloneNode(true);
-            table.style.width = '100%'; // Ensure full width inside wrapper
+            const table = document.querySelector('.pricing-table-container').cloneNode(true);
+            element.appendChild(summary);
+            element.appendChild(table);
         
-            wrapper.appendChild(summary);
-            wrapper.appendChild(table);
-            document.body.appendChild(wrapper);
+            document.body.appendChild(element); // Append to DOM so html2pdf can render
         
-            // Step 5: PDF options
             const opt = {
               margin: 0.5,
               filename: 'pricing-table.pdf',
@@ -536,17 +535,18 @@ document.querySelectorAll('.category-row').forEach(row => {
               html2canvas: {
                 scale: 2,
                 scrollY: 0,
-                windowWidth: 1600 // Ensures full table is rendered
+                windowWidth: element.scrollWidth,
+                windowHeight: element.scrollHeight
               },
-              jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+              jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' } // Landscape for wide tables
             };
         
-            // Step 6: Generate and clean up
-            html2pdf().set(opt).from(wrapper).save().then(() => {
+            html2pdf().set(opt).from(element).save().then(() => {
+              // Cleanup
               document.getElementById('pdf-wrapper')?.remove();
               collapsibles.forEach(el => el.classList.remove('show'));
             });
-          }, 300); // Delay to let all elements render
+          }, 300); // wait for layout to apply
         }
         </script>
         

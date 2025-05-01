@@ -121,4 +121,69 @@
   }
 </style>
   
-      
+ /* Ensures table doesn't overflow in PDF */
+table.feature-table {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+  }
+  
+  /* Avoid cutting off content */
+  .pricing-table-container {
+    overflow: visible !important;
+  }
+  
+  /* Optional: shrink font size slightly for better PDF fit */
+  @media print {
+    body {
+      font-size: 0.9rem;
+    }
+  
+    .feature-table th,
+    .feature-table td {
+      padding: 0.5rem;
+      font-size: 0.85rem;
+    }
+  
+    .pricing-table-container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+       /* PDF-specific tweaks */
+.pdf-mode .pricing-table-container {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  
+  .pdf-mode table.feature-table {
+    table-layout: auto !important;
+    width: 100% !important;
+    word-break: break-word;
+  }
+  
+  .pdf-mode th, .pdf-mode td {
+    white-space: normal !important;
+  }
+  
+  /* Optional: Reduce font for better PDF fitting */
+  @media print {
+    body {
+      font-size: 0.9rem;
+    }
+  
+    .feature-table th,
+    .feature-table td {
+      padding: 0.4rem;
+      font-size: 0.85rem;
+    }
+  }
+/* Ensure this section only appears in the PDF (when cloning) */
+.print-only {
+    display: none;
+  }
+  
+  .pdf-mode .print-only {
+    display: block !important;
+  }
+    
